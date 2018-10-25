@@ -1,0 +1,27 @@
+{
+  "name": "Auth-System-Node-Template-EJS",
+  "version": "1.0.0",
+  "description": "Personal auth system node template with EJS template engine",
+  "main": "server.js",
+  "author": "Bharath Kumar R",
+  "license": "MIT",
+  "repository": "https://github.com/BharathKumarRavichandran/Basic-Node-Templates",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "connect-flash": "*",
+    "cookie-parser": "*",
+    "express": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "path": "*",
+    "ejs": "*",
+    "signale": "^1.3.0"
+  }
+}

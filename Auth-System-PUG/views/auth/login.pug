@@ -1,0 +1,50 @@
+doctype html
+html
+  head
+    title Login | Application Name
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(href='https://fonts.googleapis.com/css?family=Montserrat|Raleway', rel='stylesheet')
+    link(rel='stylesheet', href='/css/material-raised-button.css')
+    link(rel='stylesheet', href='/css/material-flat-input.css')
+    link(rel='stylesheet', href='/css/site-template.css')
+    link(rel='stylesheet', href='/css/footer.css')
+    link(rel='stylesheet', href='/css/login.css')
+    //
+      Uncomment navbar if you want navbar
+      extends ../partials/navbar-links
+  body
+    //
+      Uncomment navbar if you want navbar
+      extends ../partials/navbar.pug
+    .container-fluid
+      a(onclick='#', style='text-decoration: none; color:black;')
+        h1.title Application Name
+      .tagline Application Tagline
+      h2#loginTitle.login-title Login
+      .container
+        .row
+          .col-md-4
+          .col-md-4
+            .text-center
+              form.formClass(method='post', action='/user/login', autocomplete='off')
+                #errMsg
+                .form-group
+                  input#usernameIn.username-input.material-flat-input(type='text', placeholder='Username', name='username', required='required')
+                .form-group
+                  input#passIn.pass-input.material-flat-input(type='password', placeholder='Password', name='password', required='required')
+                .form-group
+                  input#submitIn.submit-input.form-control.material-raised-button(type='submit', value='Login', name='login')
+          .col-md-4
+      .container(style='margin-top: 5vh;')
+        .row(style='margin-top: 20px;')
+          .col-md-4
+          .col-md-4
+            .row
+              .col-md-8.under-text New user? Register here!
+              .col-md-4
+                a(href='/user/register')
+                  button.btn.material-raised-button Register
+          .col-md-4
+
+include ../partials/footer.pug

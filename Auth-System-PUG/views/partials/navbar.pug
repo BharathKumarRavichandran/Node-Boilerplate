@@ -1,0 +1,23 @@
+nav.navbar.navbar-inverse
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='#') Intelli Supply Stocks
+    #myNavbar.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li
+          a(href='/bills/new') Create New Bill
+        li
+          a(href='/bills') View Bills
+        li
+          a(href='/orders') View Orders
+        li
+          a(href='/stocks') Check Stocks
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href='/logout')
+            span.glyphicon.glyphicon-log-out
+            |  Logout

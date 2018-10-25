@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    font-family: "Montserrat", "Raleway", sans-serif;
+}
+
+html {
+    height: 100vh;
+    font-family: "Montserrat", "Raleway", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: "Montserrat", "Raleway", sans-serif;
+}
+
+body::after {
+    content: '';
+    display: block;
+    height: 100px;
+}

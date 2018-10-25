@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+    font-family: "Montserrat", "Raleway", sans-serif;
+}
+
+html {
+    height: 100vh;
+    font-family: "Montserrat", "Raleway", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: "Montserrat", "Raleway", sans-serif;
+}
+
+body::after {
+    content: '';
+    display: block;
+    height: 100px;
+}
+
+.footer{
+    height: 1.9em;
+    text-align: center;
+    background-color: #111111;
+    color: #eee;
+    overflow: hidden;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    font-size: 18px;
+    font-family: "Montserrat","Raleway",sans-serif;
+}
+
+a:hover, button:hover{
+    cursor: pointer;
+}
+
+.heart{
+    color: #2196f3;
+}
+
+.footer a{
+    text-decoration: none;
+    color: #2196f3;
+    font-size: 1.2em;
+}
+
+.footer a:hover,.footer a:visited,.footer a:link,.footer a:active{
+    text-decoration: none;
+    color: #2196f3;
+}
+
+.footer a:hover{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+  .footer{
+    font-size: 14px;
+  }
+}

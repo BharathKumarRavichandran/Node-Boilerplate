@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Settings | Intelli Supply Stocks</title>
+    <link rel="stylesheet" href="/css/settings.css"/>
+    <% include ../partials/navbar-links%>
+</head>
+
+<body>
+    <% include ../partials/navbar%>
+	<div style="margin-top: 3vh;">
+		<div class="container">
+		    <h1 class="settings-head">Settings</h1>
+		  	<hr>
+            <% include ../partials/notification%>
+	<!----------------------------------------------->
+			<div class="row">
+			<!----------------------------------------------->
+		        <div class="col-md-3"></div>
+		    <!----------------------------------------------->  
+		        <div class="col-md-9 personal-info">
+ 				<!----------------------------------------------->
+		            <h2 class="info-head">Personal info</h2>
+
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-md-3 control-label label-input">Username:</label>
+                                <div class="col-md-8">
+                                    <input class="material-flat-input" type="text" value="" disabled>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-lg-3 control-label label-input" for="newEmail">Email:</label>
+                                <div class="col-lg-8">
+                                    <input id="newEmail" class="material-flat-input" type="text" name="newEmail" value="">
+                                </div>
+                            </div>    
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-md-3 control-label label-input" for="oldPassword">Old Password:</label>
+                                <div class="col-md-8">
+                                    <input id="oldPassword" class="material-flat-input" type="password" name="oldPassword" placeholder="Enter Old Password">
+                                </div>
+                            </div>    
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-md-3 control-label label-input" for="newPassword">Password:</label>
+                                <div class="col-md-8">
+                                    <input id="newPassword" class="material-flat-input" type="password" name="newPassword" placeholder="Enter New Password">
+                                </div>
+                            </div>    
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-md-3 control-label label-input" for="newConfirmPassword">Confirm password:</label>
+                                <div class="col-md-8">
+                                    <input id="newConfirmPassword" class="material-flat-input" type="password" name="newConfirmPassword" placeholder="Retype New Password">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-md-3 control-label label-input"></label>
+                                <div class="col-md-8">
+                                    <input type="button" class="material-raised-button" value="Save Changes"
+                                </div>
+                            </div>    
+                        </div>
+                        
+                        <hr>
+                        
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-md-3 control-label label-input" style="font-size: 20px;">Delete Account</label>
+                                <div class="col-md-8" style="margin-top: 10px; font-size: 15px;">
+                                    <div>Are you sure to delete your account and all information related to your account? Please be aware that all data will be permanently lost if you delete your account.</div>
+                                </div>
+                            </div>    
+                            <div class="row">
+                                <div class="col-md-3"></div>
+                                <div class="form-group" style="margin-top: 10px; margin-left: 2px;">
+                                        <div class="col-md-3"></div>
+                                        <div class="col-md-5">
+                                            <input id="password" class="material-flat-input" type="password" name="password" placeholder="Enter Password">
+                                        </div>
+                                        <div class="col-md-4"></div>
+                                </div>    
+                            </div>
+                        </div>
+                            <div class="col-md-3"></div>
+                            <div class="col-md-9">
+                                <input type="button" class="material-raised-button material-raised-button-red" value="Delete Account" style="margin-left: -10px;">
+                            </div>
+                        </div>
+                    </form>
+		      </div>
+		  </div>
+		</div>
+	</div>
+<script src="/js/notification.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width,initial-scale=1.0')
+    title Settings | Intelli Supply Stocks
+    link(rel='stylesheet', href='/css/settings.css')
+  body
+    // extends ../partials/navbar-links
+    // extends ../partials/navbar
+    div(style='margin-top: 3vh;')
+      .container
+        h1.settings-head Settings
+        hr
+        // -------------------------------------------
+        .row
+          // -------------------------------------------
+          .col-md-3
+          // -------------------------------------------
+          .col-md-9.personal-info
+            // -------------------------------------------
+            h2.info-head Personal info
+            form.form-horizontal(role='form')
+              .form-group
+                .row
+                  label.col-md-3.control-label.label-input Username:
+                  .col-md-8
+                    input.material-flat-input(type='text', value='', disabled='')
+              .form-group
+                .row
+                  label.col-lg-3.control-label.label-input(for='newEmail') Email:
+                  .col-lg-8
+                    input#newEmail.material-flat-input(type='text', name='newEmail', value='')
+              .form-group
+                .row
+                  label.col-md-3.control-label.label-input(for='oldPassword') Old Password:
+                  .col-md-8
+                    input#oldPassword.material-flat-input(type='password', name='oldPassword', placeholder='Enter Old Password')
+              .form-group
+                .row
+                  label.col-md-3.control-label.label-input(for='newPassword') Password:
+                  .col-md-8
+                    input#newPassword.material-flat-input(type='password', name='newPassword', placeholder='Enter New Password')
+              .form-group
+                .row
+                  label.col-md-3.control-label.label-input(for='newConfirmPassword') Confirm password:
+                  .col-md-8
+                    input#newConfirmPassword.material-flat-input(type='password', name='newConfirmPassword', placeholder='Retype New Password')
+              .form-group
+                .row
+                  label.col-md-3.control-label.label-input
+                  .col-md-8
+                    input.material-raised-button(type='button', value='Save Changes', <='', div='')
+                hr
+                .form-group
+                  .row
+                    label.col-md-3.control-label.label-input(style='font-size: 20px;') Delete Account
+                    .col-md-8(style='margin-top: 10px; font-size: 15px;')
+                      div
+                        | Are you sure to delete your account and all information related to your account? Please be aware that all data will be permanently lost if you delete your account.
+                  .row
+                    .col-md-3
+                    .form-group(style='margin-top: 10px; margin-left: 2px;')
+                      .col-md-3
+                      .col-md-5
+                        input#password.material-flat-input(type='password', name='password', placeholder='Enter Password')
+                      .col-md-4
+                .col-md-3
+                .col-md-9
+                  input.material-raised-button.material-raised-button-red(type='button', value='Delete Account', style='margin-left: -10px;')
+    script(src='/js/notification.js')

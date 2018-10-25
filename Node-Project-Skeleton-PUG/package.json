@@ -1,0 +1,27 @@
+{
+  "name": "Node-Project-Skeleton-PUG",
+  "version": "1.0.0",
+  "description": "Personal node template with PUG template engine",
+  "main": "server.js",
+  "author": "Bharath Kumar R",
+  "license": "MIT",
+  "repository": "https://github.com/BharathKumarRavichandran/Basic-Node-Templates",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "signale": "*",
+    "cookie-parser": "*",
+    "express": "*",
+    "pug": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "path": "*",
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "connect-flash": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*"
+  }
+}
