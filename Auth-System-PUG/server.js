@@ -5,12 +5,13 @@ const path           = require('path');
 const bodyParser     = require('body-parser');
 const cookieParser   = require('cookie-parser');
 const config         = require('./config/config.js');
-const passport       = require("passport");
-const User           = require("./app/models/user");
-const LocalStrategy  = require("passport-local");
+const passport       = require('passport');
+const User           = require('./app/models/user-model');
+const LocalStrategy  = require('passport-local');
 
 //importing router
-const defaultRouter = require('./app/routes/default-router.js');
+const userRouter    = require('./app/routes/user-router.js')
+
 
 //initialising express
 const app = express();
@@ -47,12 +48,15 @@ app.use((req,res,next)=>{
 	next();
 })
 
+
+// Including routers
+app.use('/user', userRouter);
+
+
 //Home Route
 app.get('/',(req,res)=>{
 	res.render("auth/login");
 })
-
-app.use('/default', defaultRouter);
 
 app.listen(3000,()=> {
   signale.success('Server Started on port: 3000');
@@ -69,84 +73,27 @@ app.use(require("express-session")({
 //================================AUTH ROUTES================================
 
 //===SHOW REGISTER FORM=====
-
 app.get("/register",(req,res)=>{
 	res.redirect("/user/register");
 })
-
-app.get("/user/register",(req,res)=>{
-	res.render("auth/register");
-})
+app.get("/user/register", userRouter)
 
 //====CHECK IF USERNAME EXISTS(WITH AJAX)======
-
-app.get("/usernamecheck",(req,res)=>{
-	User.find({username:req.query.input},(err,result)=>{
-		if (err) {
-			console.log(err)
-		} else {
-			res.send(""+result.length);
-		}
-	})
-})
+app.get("/user/usernamecheck", userRouter)
 
 //=====REGISTER USER=======
-
-app.post("/user/register",(req,res)=>{
-	formData = {
-				username:req.body.username,
-				shop_name:req.body.company_name,
-				mobile_number:req.body.mobile_number,
-				email:req.body.email
-			};
-	User.register(new User(formData),req.body.password,(err,newUser)=>{
-		if (err) {
-			console.log(err)
-			return res.redirect("/register")
-		} else {
-			newUser.save()
-			passport.authenticate("local")(req,res,()=>{
-				res.redirect("/");
-			})			
-		}
-	})
-})
-
+app.post("/user/register",userRouter)
 
 //======SHOW LOGIN FORM=======
-
 app.get("/login",(req,res)=>{
 	res.redirect("/user/login");
 })
-
-app.get("/user/login",(req,res)=>{
-	res.render("auth/login");
-})
+app.get("/user/login", userRouter)
 
 
 //======LOGIN THE USER========
-
-app.post("/user/login",passport.authenticate("local",
-	{
-		successRedirect:"https://www.google.com/", // Put your success login route here
-		failureRedirect:"/user/login"
-	}),(req,res)=>{}
-);
+app.post("/user/login",userRouter)
 
 
 //========LOGOUT ROUTE==============
-
-app.get("/user/logout",(req,res)=>{
-	req.logout();
-	res.redirect("/");
-})
-
-//==============MIDDLEWARE CHECK FOR LOGIN==========
-
-function isLoggedIn(req,res,next){
-	if (req.user) {
-		return next();
-	} else {
-		res.redirect('/user/login');
-	}
-}
+app.get("/user/logout",userRouter)
